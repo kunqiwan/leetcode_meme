@@ -25,32 +25,58 @@ public class practice {
 
     public static void main(String[] args){
         int [] s = {1,1,100,4};
-        System.out.println(Solution.solution(s));
+        //Solution.solution(s)
+        System.out.println();
 
     }
 
     static class Solution {
-        public static int solution(int[] A) {
-            int N = A.length;
-            System.out.println("N"+N);
-            // start from 1, a size 4 array the maximum is 4,so the seen array size should be 5, we jump 0
-            boolean[] seen = new boolean[N+1];
-            System.out.println(seen.length);
-            System.out.println("show:"+seen[3]);
-            for (int i = 0; i < N; i++) {
-                if (A[i] > 0 && A[i] <=N) {
-                    seen[A[i]] = true;
-                }
-                System.out.println("i"+i);
-            }
+//        public static int solution(int[] A) {
+//            int N = A.length;
+//            System.out.println("N"+N);
+//            // start from 1, a size 4 array the maximum is 4,so the seen array size should be 5, we jump 0
+//            boolean[] seen = new boolean[N+1];
+//            System.out.println(seen.length);
+//            System.out.println("show:"+seen[3]);
+//            for (int i = 0; i < N; i++) {
+//                if (A[i] > 0 && A[i] <=N) {
+//                    seen[A[i]] = true;
+//                }
+//                System.out.println("i"+i);
+//            }
+//
+//            for (int i = 1; i <N; i++) {
+//                if (!seen[i]) {
+//                    return i;
+//                }
+//            }
+//
+//            return N;
+//        }
 
-            for (int i = 1; i <N; i++) {
-                if (!seen[i]) {
+        public int solution(int[] A) {
+            // Implement your solution here
+            Arrays.sort(A);
+            int min = A[0];
+            int max = A[A.length-1];
+            if (max < 0){
+                return 1;
+            }
+            // the max number in array
+            int size = A.length;
+            for (int i=0;i<size;i++){
+                boolean containsX = false;
+                for (int m = 0; m < A.length; m++) {
+                    if (A[m] == i) {
+                        containsX = true;
+                        break;
+                    }
+                }
+                if (!containsX) {
                     return i;
                 }
             }
-
-            return N;
+            return size+1;
         }
     }
 }
