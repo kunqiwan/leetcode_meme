@@ -26,7 +26,7 @@ if (nums.length == 0){
     //back tracking
 void backtracking (int[] nums){
 if (path.size() ==nums.length ){
-result.add(path);
+    result.add(new LinkedList<>(path));
 return;
 }
 //single structure logistic
