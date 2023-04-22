@@ -5,7 +5,7 @@ public class lec1603 {
     int medium;
     int big;
 
-    public ParkingSystem(int big, int medium, int small) {
+    public void ParkingSystem(int big, int medium, int small) {
         this.small = small;
         this.medium = medium;
         this.big = big;
