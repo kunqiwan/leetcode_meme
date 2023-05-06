@@ -15,7 +15,7 @@ public class INGTest {
 //    }
 
     }
-
+//
         public static int solution(int X, int Y, int[] A) {
             int N = A.length;
             int result = -1;
